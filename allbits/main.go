@@ -3,8 +3,13 @@ package main
 import "fmt"
 
 func main() {
+	btoi := map[bool]int{false: 0, true: 1}
+
 	AllBits(5, func(bits []bool) {
-		fmt.Println(bits)
+		for _, b := range bits {
+			fmt.Printf("%d", btoi[b])
+		}
+		fmt.Println()
 	})
 }
 
