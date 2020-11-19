@@ -14,10 +14,10 @@ func main() {
 }
 
 func AllBits(bitsLen int, callback func(bits []bool)) {
-	for deci := 0; deci < 1<<bitsLen; deci++ {
+	for pattern := 0; pattern < 1<<bitsLen; pattern++ {
 		bits := make([]bool, bitsLen)
-		for digit := 0; digit < bitsLen; digit++ {
-			bits[bitsLen-1-digit] = deci&(1<<digit) > 0
+		for rpos := 0; rpos < bitsLen; rpos++ {
+			bits[bitsLen-1-rpos] = pattern&(1<<rpos) > 0
 		}
 
 		callback(bits)
